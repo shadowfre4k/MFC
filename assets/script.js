@@ -4,6 +4,7 @@
 // var movieTitle = searchBarEl.Value;
 var omdbApi = "http://www.omdbapi.com/?t=chicken&apikey=bd8b9b41";
 
+// <<<<<<< APIKey
 fetch(omdbApi).then(function (response) {
   response.json().then(function (data) {
     console.log(data);
@@ -28,3 +29,15 @@ fetch(youtubeAPI).then(function (response) {
     console.log(data.items[0].id.videoId);
   });
 });
+// =======
+// init();
+
+// var omdbApiUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=bd8b9b41";
+// var youtubeSearchApiUrl = "https://www.googleapis.com/youtube/v3/&key= AIzaSyBEbEsm1R3asrUjS8pzXddROB-txKkF4tM";
+
+// // AIzaSyBEbEsm1R3asrUjS8pzXddROB-txKkF4tM
+
+// // var youtubeSearchApiUrl = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails";
+
+// // AIzaSyBEbEsm1R3asrUjS8pzXddROB-txKkF4tM
+// >>>>>>> main
