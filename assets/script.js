@@ -1,3 +1,9 @@
+//Adding 'let' statements (essentially, 'vars') to 'get' the 'Form 1', 'Form 2', 'Btn1' & 'Btn2' 'Element's 'By' their 'Id's for access by 'click listeners', etc. later.
+let inputForm1 = document.getElementById("input1");
+let searchBtn1 = document.getElementById("btn1");
+let inputForm2 = document.getElementById("input2");
+let searchBtn2 = document.getElementById("btn2");
+
 //  this is the key for Omdb API
 // var movieTitleFunction = function (event) {
 // var searchBarEl = document.querySelector("#searchBar");
@@ -29,6 +35,34 @@ fetch(youtubeAPI).then(function (response) {
     console.log(data.items[0].id.videoId);
   });
 });
+
+//Buttons tested here. They "log" the string AND save the text entered into the field into local storage!).z
+searchBtn1.addEventListener("click", function() {
+  localStorage.setItem("input1Value", inputForm1.value);
+  console.log("Button 1 clicked");
+});
+
+searchBtn2.addEventListener("click", function() {
+  localStorage.setItem("input2Value", inputForm2.value);
+  console.log("Button 2 clicked");
+});
+
+
+
+//The 'Default' behavior in the 'Event' of a click on a button inside a form is to submit the form and refresh the page. We want to 'prevent' this from happening, so here we add a 'function' that 'handle's the 'Search' without allowing the 'Default' action to occur. The 'handleSearch' function then retrieves the text 'value' of field 'inputForm1' (the 1st movie/show choice, which is accessed by the 'let' we created at the global-level) and passes that value to the 'getContent' 'function' (which still needs to be declared above) to actually 'get' the 'Content', using the 'searchResult' as a paramater.
+// function handleSearch(e) {
+//   e.preventDefault();
+//   let searchResult = inputForm1.value;
+//   getContent(searchResult).then(data => {
+//     let choiceTitle = document.querySelector("choice-title");
+//     let choiceScore = document.querySelector("choice-score");
+//   });
+//   inputForm.value = "";
+// };
+
+// //Here, our JS 'listen's for a 'clikc' on the 'search' button.
+// searchBtn1.addEventListener("click", handleSearch);
+// searchBtn1.addEventListener("click", handleSearch);
 // =======
 // init();
 
