@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Linking bulma CDN -->
 
-  <!-- Linking bulma CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto+Slab:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Movie Fight Club</title>
+  </head>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="stylesheet" href="./assets/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto+Slab:wght@900&display=swap"
-    rel="stylesheet">
-  <title>Movie Fight Club</title>
-</head>
+  <body>
+    <header class="columns">
+      <p class="column m-3 has-background-grey-lighter">1</p>
+      <p class="column m-3 has-background-grey-lighter">2</p>
+    </header>
 
-<body>
-  <header class="columns">
-    <p class="column m-3 has-background-grey-lighter">1</p>
-    <p class="column m-3 has-background-grey-lighter">2</p>
-  </header>
-  <div class="columns">
-    <div class="column" id="choice1-box">
-      <h1>First choice</h1>
-      <div class="column" id="choice1-art">
+    <!-- choice 1 -->
+    <div class="columns">
+      <div class="column" id="choice1-box">
+        <h1>First choice</h1>
+        <div class="column" id="choice1-art"><img class="img1" /></div>
+
+        <input id="input1" type="text" placeholder="First Choice" />
+        <button class="button" id="btn1">Button</button>
+        <div id="rotten-score1"></div>
       </div>
-      <button class="button" id="btn1">Button</button>
-      <input id="input1" type="text" placeholder="First Choice">
-      <div id="rotten-score">
+
+      <!-- choice 2 -->
+      <div class="column" id="choice2-box">
+        <h1>Second choice</h1>
+        <div class="column" id="choice2-art"><img class="img2" /></div>
+        <input id="input2" type="text" placeholder="Second Choice" />
+        <button class="button" id="btn2">Button</button>
+        <div id="rotten-score2"></div>
       </div>
     </div>
-    <div class="column" id="choice2-box">
-      <h1>Second choice</h1>
-      <div class="column" id="choice1-art">
+    <div class="column m-3 has-background-grey-lighter" id="results">
+      <h3>Winner by RT KO!</h3>
 
+      <div class="box">
+        <div class="choice-title">I'm in a box.</div>
+        <div class="choice-score">I'm in a box.</div>
       </div>
-      <button class="button" id="btn2">Button</button>
-      <input id="input2" type="text" placeholder="Second Choice">
     </div>
-  </div>
-  <div class="column m-3 has-background-grey-lighter" id="results">
-  <h3>Winner by RT KO!</h3>
-  
-  <div class="box">
-    <div class="choice-title">
-      I'm in a box.
-    </div>
-    <div class="choice-score">
-      I'm in a box.
-    </div>
-</div>
-  </div>
-  <script src="./assets/script.js"></script>
-</body>
-
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
