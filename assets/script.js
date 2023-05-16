@@ -16,6 +16,8 @@ var movieObj2 = {
   youtubeID: 0,
 };
 
+let choice1El = document.querySelector("#choice1-art");
+
 //initialize into local storage
 
 localStorage.setItem("movie1", JSON.stringify(movieObj1));
@@ -30,28 +32,49 @@ var youtubeAPI =
 //   });
 // });
 
-var rottenScore = function () {
-  var omdbApi = "http://www.omdbapi.com/?t=chicken&apikey=bd8b9b41";
-  fetch(omdbApi).then(function (response) {
-    response.json().then(function (data) {
-      var getRottenScore = data.Ratings[1].Value; //grabbing the desired score for movie input
+// var rottenScore = function () {
+//   var omdbApi = "http://www.omdbapi.com/?t=chicken&apikey=bd8b9b41";
+//   fetch(omdbApi).then(function (response) {
+//     response.json().then(function (data) {
+//       var getRottenScore = data.Ratings[1].Value; //grabbing the desired score for movie input
 
-      var getMovie2 = JSON.parse(localStorage.getItem("movie2"));
-      console.log(getMovie2);
+//       var getMovie2 = JSON.parse(localStorage.getItem("movie2"));
+//       console.log(getMovie2);
 
-      getMovie2.rottenScore = getRottenScore;
-      console.log(getMovie2);
-    });
-  });
-};
+//       getMovie2.rottenScore = getRottenScore;
+//       console.log(getMovie2);
+//     });
+//   });
+// };
+
+async function getMovieInfo (movie) {
+  let request = `http://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
+  let response = await fetch (request);
+  let data = await response.json();
+
+  // append poster image
+  let poster = data.Poster;
+  let image = document.createElement('img');
+  image.setAttribute('src', poster);
+  choice1El.appendChild(image);
+
+  //append rotten score
+  let rottenScore = data.Ratings[1].Value;
+  let rottenEl = document.querySelector('#rotten-score');
+  rottenEl.textContent = `Rotten Tomatoes Score: ${rottenScore}`;
+
+}
+
+
+
 
 //Buttons tested here. They "log" the string AND save the text entered into the field into local storage!).z
 searchBtn1.addEventListener("click", function () {
   let inputForm1 = document.getElementById("input1");
-
+  let userInput = inputForm1.value;
   localStorage.setItem("input1Value", inputForm1.value);
   console.log("Button 1 clicked");
-
+  getMovieInfo(userInput);
   // var getMovie1 = localStorage.getItem("input1Value");
   // console.log(getMovie1);
 });
@@ -61,7 +84,6 @@ searchBtn2.addEventListener("click", function () {
 });
 
 //rottenScore()
-rottenScore();
 //youtubeID()
 
 //The 'Default' behavior in the 'Event' of a click on a button inside a form is to submit the form and refresh the page. We want to 'prevent' this from happening, so here we add a 'function' that 'handle's the 'Search' without allowing the 'Default' action to occur. The 'handleSearch' function then retrieves the text 'value' of field 'inputForm1' (the 1st movie/show choice, which is accessed by the 'let' we created at the global-level) and passes that value to the 'getContent' 'function' (which still needs to be declared above) to actually 'get' the 'Content', using the 'searchResult' as a paramater.
