@@ -6,8 +6,22 @@ let searchBtn2 = document.getElementById("btn2");
 let choice1El = document.querySelector("#choice1-art");
 let choice2El = document.querySelector("#choice2-art");
 
-var youtubeAPI =
-  "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBEbEsm1R3asrUjS8pzXddROB-txKkF4tM&q=blow+Trailer&type=video";
+let choice1 = false;
+let choice2 = false;
+
+async function getYTTrailer(movie) {
+  let request =
+    "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBEbEsm1R3asrUjS8pzXddROB-txKkF4tM&q=" +
+    movie +
+    "+Trailer&type=video";
+  let response = await fetch(request);
+  let data = await response.json();
+  let videoId = data.items[0].id.videoId;
+
+  let videoEl = document.querySelector("script");
+  let videoSrc = document.createElement("div");
+}
+
 // choice 1
 async function getMovieInfo(movie) {
   let request = `http://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
@@ -24,6 +38,14 @@ async function getMovieInfo(movie) {
   localStorage.setItem("rate1Value", rottenScore);
   let rottenEl = document.querySelector("#rotten-score1");
   rottenEl.textContent = `Rotten Tomatoes Score: ${rottenScore}`;
+
+  choice1 = true;
+  if (choice1 === choice2) {
+    compareScore();
+  } else {
+    console.log("please select second movie");
+    return;
+  }
 }
 
 async function getMovieInfo2(movie) {
@@ -41,10 +63,27 @@ async function getMovieInfo2(movie) {
   localStorage.setItem("rate2Value", rottenScore2);
   let rottenE2 = document.querySelector("#rotten-score2");
   rottenE2.textContent = `Rotten Tomatoes Score: ${rottenScore2}`;
+
+  choice2 = true;
+  if (choice2 === choice1) {
+    compareScore();
+  } else {
+  }
 }
 
 //compare two score function
-let compareScore = function () {};
+compareScore = function () {
+  let title1 = localStorage.getItem("input1Value");
+  let title2 = localStorage.getItem("input2Value");
+  let score1 = localStorage.getItem("rate1Value");
+  let score2 = localStorage.getItem("rate2Value");
+
+  if (score1 > score2) {
+    getYTTrailer(title1);
+  } else {
+    getYTTrailer(title2);
+  }
+};
 
 //Buttons tested here. They "log" the string AND save the text entered into the field into local storage!).z
 searchBtn1.addEventListener("click", function () {
@@ -53,7 +92,6 @@ searchBtn1.addEventListener("click", function () {
   localStorage.setItem("input1Value", inputForm1.value);
   console.log("Button 1 clicked");
   getMovieInfo(userInput);
-  compareScore();
 });
 
 searchBtn2.addEventListener("click", function () {
