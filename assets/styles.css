@@ -8,6 +8,13 @@ header {
 
 body {
   padding: 10px;
+  background-color: black;
+}
+
+#choice1-art, #choice2-art {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 #choice1-box,
@@ -54,6 +61,7 @@ input {
 
 #choice1-art,
 #choice2-art {
+  background-color: #222121;
   border: solid black 2px;
   margin: 10px;
   height: 500px;
@@ -96,4 +104,8 @@ h3 {
   border: solid black 2px;
   width: 50%;
   text-align: center;
+}
+
+#rotten-score1, #rotten-score2 {
+  color: white;
 }
