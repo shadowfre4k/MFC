@@ -23,27 +23,32 @@
 
   <body>
     <header class="columns">
-      <p class="column m-3 has-background-grey-lighter">1</p>
-      <p class="column m-3 has-background-grey-lighter">2</p>
+      <!-- Kevin commented-out our original grayboxes and added banner.
+        <p class="column m-3 has-background-grey-lighter">1</p>
+      <p class="column m-3 has-background-grey-lighter">2</p> -->
+      <img src="./assets/MFC_Banner.jpg" alt="Movie Fight Club Banner">
     </header>
 
     <!-- choice 1 -->
     <div class="columns">
       <div class="column" id="choice1-box">
         <h1>First choice</h1>
-        <div class="column" id="choice1-art"><img class="img1" /></div>
-
+        <div class="column" id="choice1-art"><img src = 
+        "./assets/spotlight1.jpg" class="img1" /></div>
         <input id="input1" type="text" placeholder="First Choice" />
-        <button class="button" id="btn1">Button</button>
+        <br />
+        <button class="button" id="btn1">Submit</button>
         <div id="rotten-score1"></div>
       </div>
 
       <!-- choice 2 -->
       <div class="column" id="choice2-box">
         <h1>Second choice</h1>
-        <div class="column" id="choice2-art"><img class="img2" /></div>
+        <div class="column" id="choice2-art"><img src = 
+          "./assets/spotlight2.jpg" class="img2" /></div>
         <input id="input2" type="text" placeholder="Second Choice" />
-        <button class="button" id="btn2">Button</button>
+        <br />
+        <button class="button" id="btn2">Submit</button>
         <div id="rotten-score2"></div>
       </div>
     </div>
