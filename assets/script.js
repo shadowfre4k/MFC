@@ -1,10 +1,6 @@
 //Adding 'let' statements (essentially, 'vars') to 'get' the 'Form 1', 'Form 2', 'Btn1' & 'Btn2' 'Element's 'By' their 'Id's for access by 'click listeners', etc. later.
-let title1El = document.querySelector(".choice-title");
 let searchBtn1 = document.getElementById("btn1");
-let inputForm2 = document.getElementById("input2");
 let searchBtn2 = document.getElementById("btn2");
-let choice1El = document.querySelector("#choice1-art");
-let choice2El = document.querySelector("#choice2-art");
 
 let choice1 = false;
 let choice2 = false;
@@ -17,14 +13,12 @@ async function getYTTrailer(movie) {
   let response = await fetch(request);
   let data = await response.json();
   let videoId = data.items[0].id.videoId;
-
-  let videoEl = document.querySelector("script");
-  let videoSrc = document.createElement("div");
+  console.log(videoId);
 }
 
 // choice 1
 async function getMovieInfo(movie) {
-  let request = `http://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
+  let request = `https://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
   let response = await fetch(request);
   let data = await response.json();
 
@@ -49,7 +43,7 @@ async function getMovieInfo(movie) {
 }
 
 async function getMovieInfo2(movie) {
-  let request = `http://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
+  let request = `https://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
   let response = await fetch(request);
   let data = await response.json();
 
