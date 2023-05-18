@@ -5,7 +5,7 @@
 # Movie Fight Club
 > Assume that the client cannot decide on which movie to watch between two choices.
 > Allow the client to enter both choices via movie title in a search bar and then compaire the two.
-> Using an API key in conjunction with [The Open Movie Database](https://www.omdbapi.com), pull the IMDB ratings for both selections and display the "winner" based on highest rating score.
+> Using an API key `in conjunction with [The Open Movie Database](https://www.omdbapi.com), pull the IMDB ratings for both selections and display the "winner" based on highest rating score.
 > Using an additional [YouTube Data API key](https://developers.google.com/youtube/v3), upon displaying results, also display a trailer (if available) for both movies from YouTube.
 > Emphasize the "winning" selection using a border color or trophy icon.
 > Live demo: [![Movie Fight Club](https://custom-icon-badges.demolab.com/badge/Movie&nbsp;Fight&nbsp;Club-blue?logo=link)](https://shadowfre4k.github.io/Movie-Fight-Club/)
