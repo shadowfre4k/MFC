@@ -1,21 +1,15 @@
 * {
-  border-radius: 5px;
-}
-
-header {
-  background-color: black;
+  border-radius: 10px;
+  margin: 0 2% 0 2%;
 }
 
 body {
   padding: 10px;
+  background-color: black;
 }
 
-#choice1-box,
-#choice2-box {
-  border: solid black 2px;
-  margin: 10px;
-  height: 700px;
-  text-align: center;
+header {
+  background-color: black;
 }
 
 h1 {
@@ -25,6 +19,25 @@ h1 {
 h1,
 .button {
   font-family: "Bruno Ace", sans-serif;
+}
+
+input {
+  text-align: center;
+  width: 55%;
+  height: 40px;
+}
+
+h3 {
+  font-size: 20pt;
+  text-align: center;
+}
+
+.column {
+  background-color: gray;
+}
+
+.column h1 {
+  color: white;
 }
 
 .button {
@@ -46,27 +59,11 @@ h1,
   transition: box-shadow 0.1s ease-in-out;
 }
 
-input {
-  text-align: center;
-  width: 55%;
-  height: 40px;
-}
-
-#choice1-art,
-#choice2-art {
+.choice-title,
+.choice-score {
+  margin: 1%;
   border: solid black 2px;
-  margin: 10px;
-  height: 500px;
-  text-align: center;
-}
-
-#results {
-  height: 300px;
-  border: solid black 2px;
-}
-
-h3 {
-  font-size: 20pt;
+  width: 50%;
   text-align: center;
 }
 
@@ -77,12 +74,19 @@ h3 {
   height: 50%;
 }
 
-.column {
-  background-color: gray;
+#choice1-art,
+#choice2-art {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-.column h1 {
-  color: white;
+#choice1-box,
+#choice2-box {
+  border: solid black 2px;
+  margin: 10px;
+  height: 80%;
+  text-align: center;
 }
 
 #choice1-box,
@@ -90,10 +94,21 @@ h3 {
   background: linear-gradient(45deg, #68006e, #a200ff);
 }
 
-.choice-title,
-.choice-score {
-  margin: 1%;
+#choice1-art,
+#choice2-art {
+  background-color: #222121;
   border: solid black 2px;
-  width: 50%;
+  margin: 10px;
+  height: 500px;
   text-align: center;
+}
+
+#rotten-score1,
+#rotten-score2 {
+  color: white;
+}
+
+#results {
+  height: 300px;
+  border: solid black 2px;
 }

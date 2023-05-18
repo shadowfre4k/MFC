@@ -12,10 +12,13 @@ async function getYTTrailer(movie) {
     "+Trailer&type=video";
   let response = await fetch(request);
   let data = await response.json();
-  let videoId = data.items[0].id.videoId;
-  console.log(videoId);
-}
 
+  let ytId = data.items[0].id.videoId;
+  let videoEmb = "https://www.youtube.com/watch?v=xKJmEC5ieOk&t" + ytId;
+
+  console.log(movie);
+  console.log(videoEmb);
+}
 // choice 1
 async function getMovieInfo(movie) {
   let request = `https://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
@@ -32,7 +35,7 @@ async function getMovieInfo(movie) {
   localStorage.setItem("rate1Value", rottenScore);
   let rottenEl = document.querySelector("#rotten-score1");
   rottenEl.textContent = `Rotten Tomatoes Score: ${rottenScore}`;
-
+  //make sure both are checked
   choice1 = true;
   if (choice1 === choice2) {
     compareScore();
@@ -41,7 +44,7 @@ async function getMovieInfo(movie) {
     return;
   }
 }
-
+//fetch data from omdb
 async function getMovieInfo2(movie) {
   let request = `https://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
   let response = await fetch(request);
@@ -58,10 +61,12 @@ async function getMovieInfo2(movie) {
   let rottenE2 = document.querySelector("#rotten-score2");
   rottenE2.textContent = `Rotten Tomatoes Score: ${rottenScore2}`;
 
+  //make sure they choose another movie
   choice2 = true;
   if (choice2 === choice1) {
     compareScore();
   } else {
+    console.log("please select the first movie");
   }
 }
 
