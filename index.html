@@ -6,27 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Linking bulma CDN -->
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+
+    <!-- style sheet -->
     <link rel="stylesheet" href="./assets/styles.css" />
+
+    <!-- Google Font Resources-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto+Slab:wght@900&display=swap"
       rel="stylesheet"
     />
+
+    <!--Title located on tab-->
     <title>Movie Fight Club</title>
   </head>
 
   <body>
     <header class="columns">
-      <!-- Kevin commented-out our original grayboxes and added banner.
-        <p class="column m-3 has-background-grey-lighter">1</p>
-      <p class="column m-3 has-background-grey-lighter">2</p> -->
-      <img src="./assets/MFC_Banner.jpg" alt="Movie Fight Club Banner" />
+      <!--Custom made banner image-->
+      <img src="./assets/images/MFC_Banner.jpg" alt="Movie Fight Club Banner" />
     </header>
 
     <!-- choice 1 -->
@@ -34,7 +37,7 @@
       <div class="column" id="choice1-box">
         <h1>First choice</h1>
         <div class="column" id="choice1-art">
-          <img src="./assets/spotlight1.jpg" class="img1" />
+          <img src="./assets/images/spotlight1.jpg" class="img1" />
         </div>
         <input id="input1" type="text" placeholder="First Choice" />
         <br />
@@ -46,7 +49,7 @@
       <div class="column" id="choice2-box">
         <h1>Second choice</h1>
         <div class="column" id="choice2-art">
-          <img src="./assets/spotlight2.jpg" class="img2" />
+          <img src="./assets/images/spotlight2.jpg" class="img2" />
         </div>
         <input id="input2" type="text" placeholder="Second Choice" />
         <br />
@@ -54,12 +57,27 @@
         <div id="rotten-score2"></div>
       </div>
     </div>
+
+    <!-- where the results show-->
     <div class="column m-3 has-background-grey-lighter" id="results">
       <h3>Winner by RT KO!</h3>
+      <!-- Youtube Trailer will appear here -->
+      <div class="videoContainer">
+        <iframe
+          width="560"
+          height="315"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          id="yTVideo"
+          class="hide"
+        ></iframe>
+      </div>
 
+      <!-- Where we will one day put history of past matches 'Hall of Fame'-->
       <div class="box">
-        <div class="choice-title">I'm in a box.</div>
-        <div class="choice-score">I'm in a box.</div>
+        <span>Hall of Fame</span>
       </div>
     </div>
     <script src="./assets/script.js"></script>

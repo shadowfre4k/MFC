@@ -1,11 +1,15 @@
-//Adding 'let' statements (essentially, 'vars') to 'get' the 'Form 1', 'Form 2', 'Btn1' & 'Btn2' 'Element's 'By' their 'Id's for access by 'click listeners', etc. later.
+//Global Document queries
 let searchBtn1 = document.getElementById("btn1");
 let searchBtn2 = document.getElementById("btn2");
+let videoEl = document.getElementById("yTVideo");
 
+//states to ensure that both movies are picked before trailer pops up
 let choice1 = false;
 let choice2 = false;
 
+//fetch request function for trailer that passes the Winner's movie title
 async function getYTTrailer(movie) {
+  //requesting data bassed on our search queries
   let request =
     "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBEbEsm1R3asrUjS8pzXddROB-txKkF4tM&q=" +
     movie +
@@ -13,14 +17,19 @@ async function getYTTrailer(movie) {
   let response = await fetch(request);
   let data = await response.json();
 
-  let ytId = data.items[0].id.videoId;
-  let videoEmb = "https://www.youtube.com/watch?v=xKJmEC5ieOk&t" + ytId;
+  let ytId = data.items[0].id.videoId; //this get the Trailer video ID off of youtube
+  let videoEmbed = `https://www.youtube.com/embed/${ytId}`; //the embed link where we place ID to retrieve the trailer and place it on our site
 
-  console.log(movie);
-  console.log(videoEmb);
+  videoEl.setAttribute("src", videoEmbed); //setting  the class to the HTML Element to place the video .
+  videoEl.classList.remove("hide"); //removes the hide class that creates an unsightly empty space.
+  pastWinner();
 }
+
 // choice 1
+
+//grabs the user input and passes it through to obtain the movie poster and rotten tomato score
 async function getMovieInfo(movie) {
+  //fetch request for omdb
   let request = `https://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
   let response = await fetch(request);
   let data = await response.json();
@@ -40,7 +49,7 @@ async function getMovieInfo(movie) {
   if (choice1 === choice2) {
     compareScore();
   } else {
-    console.log("please select second movie");
+    console.log("please select second movie"); //can add a visual prompt for reminder to select other movie
     return;
   }
 }
@@ -66,12 +75,15 @@ async function getMovieInfo2(movie) {
   if (choice2 === choice1) {
     compareScore();
   } else {
-    console.log("please select the first movie");
+    console.log("please select the first movie"); //can add a visual prompt for reminder to select other movie
   }
 }
 
+//store in hall of fame for history
+
 //compare two score function
 compareScore = function () {
+  //retrieves data stored to compare and decide a winner
   let title1 = localStorage.getItem("input1Value");
   let title2 = localStorage.getItem("input2Value");
   let score1 = localStorage.getItem("rate1Value");
@@ -79,11 +91,32 @@ compareScore = function () {
 
   if (score1 > score2) {
     getYTTrailer(title1);
+    hallOfFame(title1);
   } else {
     getYTTrailer(title2);
+    hallOfFame(title2);
   }
 };
 
+var hallOfFame = function (movieTitle) {
+  let movies = [];
+  movies = JSON.parse(localStorage.getItem("MovieTitle")) || [];
+  movies.push(movieTitle);
+  localStorage.setItem("MovieTitle", JSON.stringify(movies));
+};
+
+var pastWinner = function () {
+  movies = JSON.parse(localStorage.getItem("MovieTitle"));
+
+  for (let i = Math.max(movies.length - 10, 0); i < movies.length; i++) {
+    //Here, we ‘create’ the ‘button’ ‘Element’ and give it the ‘textContent’ of
+    let historyDiv = document.querySelector(".box");
+    let historyButton = document.createElement("button");
+    historyButton.textContent = movies[i];
+    historyButton.setAttribute("class", "choice-title");
+    historyDiv.appendChild(historyButton);
+  }
+};
 //Buttons tested here. They "log" the string AND save the text entered into the field into local storage!).z
 searchBtn1.addEventListener("click", function () {
   let inputForm1 = document.getElementById("input1");
@@ -100,3 +133,5 @@ searchBtn2.addEventListener("click", function () {
   console.log("Button 2 clicked");
   getMovieInfo2(userInput);
 });
+
+pastWinner();
