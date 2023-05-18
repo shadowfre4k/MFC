@@ -84,6 +84,9 @@ h3 {
   justify-content: space-between;
   display: flex;
   height: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #choice1-art,

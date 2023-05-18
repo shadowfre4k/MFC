@@ -6,26 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Linking bulma CDN -->
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+
+    <!-- style sheet -->
     <link rel="stylesheet" href="./assets/styles.css" />
+
+    <!-- Google Font Resources-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto+Slab:wght@900&display=swap"
       rel="stylesheet"
     />
+
+    <!--Title located on tab-->
     <title>Movie Fight Club</title>
   </head>
 
   <body>
     <header class="columns">
-      <!-- Kevin commented-out our original grayboxes and added banner.
-        <p class="column m-3 has-background-grey-lighter">1</p>
-      <p class="column m-3 has-background-grey-lighter">2</p> -->
+      <!--Custom made banner image-->
       <img src="./assets/images/MFC_Banner.jpg" alt="Movie Fight Club Banner" />
     </header>
 
@@ -54,8 +57,11 @@
         <div id="rotten-score2"></div>
       </div>
     </div>
+
+    <!-- where the results show-->
     <div class="column m-3 has-background-grey-lighter" id="results">
       <h3>Winner by RT KO!</h3>
+      <!-- Youtube Trailer will appear here -->
       <div class="videoContainer">
         <iframe
           width="560"
@@ -69,9 +75,9 @@
         ></iframe>
       </div>
 
+      <!-- Where we will one day put history of past matches 'Hall of Fame'-->
       <div class="box">
-        <div class="choice-title">I'm in a box.</div>
-        <div class="choice-score">I'm in a box.</div>
+        <span>Hall of Fame</span>
       </div>
     </div>
     <script src="./assets/script.js"></script>
