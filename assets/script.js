@@ -1,7 +1,7 @@
 //Adding 'let' statements (essentially, 'vars') to 'get' the 'Form 1', 'Form 2', 'Btn1' & 'Btn2' 'Element's 'By' their 'Id's for access by 'click listeners', etc. later.
 let searchBtn1 = document.getElementById("btn1");
 let searchBtn2 = document.getElementById("btn2");
-
+let videoEl = document.getElementById("yTVideo");
 let choice1 = false;
 let choice2 = false;
 
@@ -14,11 +14,15 @@ async function getYTTrailer(movie) {
   let data = await response.json();
 
   let ytId = data.items[0].id.videoId;
-  let videoEmb = "https://www.youtube.com/watch?v=xKJmEC5ieOk&t" + ytId;
+  let videoEmbed = `https://www.youtube.com/embed/${ytId}`;
+
+  videoEl.setAttribute("src", videoEmbed);
+  videoEl.classList.remove("hide");
 
   console.log(movie);
-  console.log(videoEmb);
+  console.log(videoEmbed);
 }
+
 // choice 1
 async function getMovieInfo(movie) {
   let request = `https://www.omdbapi.com/?t=${movie}&apikey=bd8b9b41`;
