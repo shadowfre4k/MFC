@@ -74,7 +74,8 @@ To potentially ruin relationships over movie choices.
 
 ## Project Status
 
-![project status](https://custom-icon-badges.demolab.com/badge/100%&nbsp;Completed-darkgreen?)
+![project status](https://img.shields.io/static/v1?label=Complete&message=100%&color=success)
+
 
 ---
 
