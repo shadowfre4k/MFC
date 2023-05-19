@@ -51,12 +51,18 @@
 - Pull trailers (if available) and display on page with score results.
 - If multiple trailers exist, display the top '0' trailer via YouTube's API list array.
 - List previous selection "winners" at the bottom of the page.
+- Make the entire app dynamically scalable based on screen size for smartphones vs laptops, computers and ipads.
 
 ---
 
 ## Screenshot
 
+- Laptop/Ipad/Desktop
+
 ![Example screenshot 1](./assets/images/01ss.gif)
+- Mobile
+
+![Example screenshot 2](./assets/images/02ss.gif)
 
 ---
 
@@ -68,7 +74,7 @@ To potentially ruin relationships over movie choices.
 
 ## Project Status
 
-![project status](https://custom-icon-badges.demolab.com/badge/100%&nbsp;Completed-darkgreen?logo=check-circle-fill =yellow)
+![project status](https://custom-icon-badges.demolab.com/badge/100%&nbsp;Completed-darkgreen?)
 
 ---
 
