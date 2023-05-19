@@ -22,7 +22,13 @@ async function getYTTrailer(movie) {
 
   videoEl.setAttribute("src", videoEmbed); //setting  the class to the HTML Element to place the video .
   videoEl.classList.remove("hide"); //removes the hide class that creates an unsightly empty space.
-  pastWinner();
+  // pastWinner();
+  // hot fix for duplicates showing up
+  let historyDiv = document.querySelector(".box");
+  let historyButton = document.createElement("button");
+  historyButton.textContent = movie;
+  historyButton.setAttribute("class", "choice-title");
+  historyDiv.appendChild(historyButton);
 }
 
 // choice 1
