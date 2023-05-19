@@ -41,6 +41,7 @@
 
 - [![VSCode 1.77.3](https://custom-icon-badges.demolab.com/badge/VSCode-blue?logo=visualstudiocode)](https://code.visualstudio.com/updates/v1_78)
 - [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)](http://www.postman.com)
+- [![Bulma](https://custom-icon-badges.demolab.com/badge/Bulma-blue?logo=bulma)](https://bulma.io/)
 
 ---
 
@@ -49,31 +50,34 @@
 - Uses API Keys from both the Open Movie Database and YouTube.
 - Pull trailers (if available) and display on page with score results.
 - If multiple trailers exist, display the top '0' trailer via YouTube's API list array.
+- List previous selection "winners" at the bottom of the page.
 
 ---
 
 ## Screenshot
 
-![Example screenshot 1](./assets/images/00ss.png)
+![Example screenshot 1](./assets/images/01ss.gif)
 
 ---
 
 ## Usage
 
-To ruin friendships over movie selections.
+To potentially ruin relationships over movie choices.
 
 ---
 
 ## Project Status
 
-![project status](https://custom-icon-badges.demolab.com/badge/In Progress-grey?logo=check-circle-fill =yellow)
+![project status](https://custom-icon-badges.demolab.com/badge/100%&nbsp;Completed-darkgreen?logo=check-circle-fill =yellow)
 
 ---
 
 ## Room for Improvement
 
-- Add movie posters upon displaying search results.
+- List the "hall of fame" or past winners indescending order based on the overall top score.
+- For movies Titles that are identical (IE: Robocop), prompt the user with a Modal to specify which release date they are reffering to.
 - For movies still in theatres, display local showtimes based on users location.
+- Tidy up the CSS with more "Doughnut Sprinkles".
 
 ---
 
@@ -94,7 +98,6 @@ To ruin friendships over movie selections.
 - [![Stackoverflow](https://custom-icon-badges.demolab.com/badge/Stack Overflow-grey?logo=stackoverflow =orange)](https://stackoverflow.com/)
 - [![Google](https://custom-icon-badges.demolab.com/badge/Google-grey?logo=google&logoColor=red)](https://www.google.com/)
 - [![Youtube](https://custom-icon-badges.demolab.com/badge/Youtube-grey?logo=video&logoColor=red)](https://www.youtube.com/)
-- [![ChatGPT](https://custom-icon-badges.demolab.com/badge/ChatGPT-grey?logo=openai&logoColor=white)](https://openai.com/blog/chatgpt)
 
 ---
 
